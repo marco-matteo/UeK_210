@@ -7,6 +7,7 @@
 - Vorteile
     - Speichereffizient 
     - Einfacher Verbreiten
+    - Sehr schnell aufgesetzt
 - Nachteile
     - Abhängig vom OS des Hostes
 
@@ -25,7 +26,8 @@
 | OS / Kernel    | Ganzes OS  | braucht Linux Kernel |
 
 ### Können virtuelle Server immer durch Container ersetzt werden?
-- Ja
+- Nein, weil einerseits können Contaiener nicht sehr sicher sein. 
+- Auch weil man mit Containern nich sehr low level kommt wie eine VM.
 
 ### Was ist unterschied zwischen Self-Managed und Fully Managed? Notieren Sie sich die wichtigsten Merkmale und diskutieren Sie die Ergebnisse in der Gruppe.
 - Wenn man den Container irgendwo hochlädt dann ist er von ihnen managed, also ist es nicht Self-Managed. Self-Managed wäre es wenn man selber die Container hostet.
