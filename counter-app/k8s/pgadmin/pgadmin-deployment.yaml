@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: counter-pgadmin
+  labels:
+    app: counter-pgadmin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: counter-pgadmin
+  template:
+    metadata:
+      labels:
+        app: counter-pgadmin
+    spec:
+      containers:
+        - name: counter-pgadmin
+          image: ghcr.io/modul-i-ch-109/pgadmin4:latest
+          ports:
+            - containerPort: 5050
+          env:
+            - name: PGADMIN_DEFAULT_EMAIL
+              value: marco.matteo@edu.tbz.ch
+            - name: PGADMIN_DEFAULT_PASSWORD
+              value: root

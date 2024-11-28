@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: counter-frontend
+  labels:
+    app: counter-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: counter-frontend
+  template:
+    metadata:
+      name: counter-frontend
+      labels:
+        app: counter-frontend
+    spec:
+      containers:
+        - name: counter-frontend
+          image: ghcr.io/marco-matteo/counter-frontend:v1
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+          env:
+            - name: NAMESPACE
+              value: 244212-marmat
+            - name: BACKEND_URL
+              value: http://counter-backend-244212-marmat.apps.exoscale-ch-gva-2-0.appuio.cloud
+            - name: npm_config_cache
+              value: ./.npm-cache
+      restartPolicy: Always
+      
